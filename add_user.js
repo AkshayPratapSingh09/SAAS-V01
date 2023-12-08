@@ -4,6 +4,7 @@ const UserModel = require("./schema.js");
 const { connectDB, closeDB } = require("./connect.js");
 
 
+
 const AddAllUsers = async () => {
   const UsersCollection = mongoose.model("User");
   try {
