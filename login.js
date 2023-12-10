@@ -6,10 +6,8 @@ const UserModel = require("./schema.js");
 // url = 'mongodb+srv://testConnection:trial1234@saas-login.xbalqfg.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(url).then(async ()=>{
-  const username = 'testConnection'
-  const password = 'trial1234'
-  url = `mongodb+srv://${username}:${password}@saas-login.xbalqfg.mongodb.net/?retryWrites=true&w=majority`
-    console.log("Db Connected");
+ url = ''
+  console.log("Db Connected");
     const collections = await mongoose.connection.db.listCollections().toArray();
 
     console.log('Collections in the database:');
@@ -22,9 +20,9 @@ mongoose.connect(url).then(async ()=>{
     })
 
 const sampleUser = new UserModel({
-    username: 'john_doe',
-    password: 'password123',
-    email: 'john.doe@example.com',
+    username: 'Trial Arpan',
+    password: 'trial@123',
+    email: 'musicloverap01@gmail.com',
     dateOfBirth: new Date('1990-01-01'),
     verified: true,
     subscribed: true,

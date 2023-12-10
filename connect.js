@@ -6,11 +6,12 @@ const connectDB = async () => {
   try {
     const username = process.env.user;
     const password = process.env.password;
-    const url = `mongodb+srv://${username}:${password}@saas-login.xbalqfg.mongodb.net/?retryWrites=true&w=majority`;
+    const url = `mongodb+srv://${username}:${password}@${process.env.host}/?retryWrites=true&w=majority`;
 
     await mongoose.connect(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      dbName: process.env.db
     });
 
     console.log("Connected to the database");
@@ -24,5 +25,4 @@ const closeDB = () => {
   console.log("Disconnected from the database");
 };
 
-connectDB()
 module.exports = { connectDB, closeDB};
